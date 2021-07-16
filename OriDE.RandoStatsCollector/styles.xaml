@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    
+    <!-- Button -->
+    <Style x:Key="DarkModeButton" TargetType="Button">
+        
+        <Style.Setters>
+            <Setter Property="Background" Value="#3D3D3D"></Setter>
+            <Setter Property="Foreground" Value="#FFFFFF"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <!--- I do not really understand what a "Template" is or why it's needed but without it the IsMouseOver property doesn't seem to work -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <!--- End of what I don't really get -->
+        </Style.Setters>
+        
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#1B6DE0"></Setter>
+            </Trigger>
+        </Style.Triggers>
+        
+    </Style>
+    
+    <!-- Window-->
+    <Style x:Key="DarkModeWindow" TargetType="Window">
+        
+        <Style.Setters>
+            <Setter Property="Background" Value="#141414"></Setter>
+        </Style.Setters>
+        
+    </Style>
+    
+</ResourceDictionary>
